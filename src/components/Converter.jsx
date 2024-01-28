@@ -17,8 +17,6 @@ export const Converter = () => {
         dispatch(fetchRates())
     }, [])
 
-    console.log(true)
-
     useEffect(() => {
         const array = text.split(' ')
         if (array.length === 4) {

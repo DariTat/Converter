@@ -19,8 +19,7 @@ export const Valute = () => {
                     valute[key]
                 ])
             }
-        }   
-       
+        }      
     }, [valute])
   
     return(

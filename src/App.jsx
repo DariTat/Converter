@@ -1,8 +1,8 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css'
-import { Header } from './components/Header'
 import { Valute } from './components/Valute'
 import { Converter } from './components/Converter'
+import { Page } from './components/Page'
 
 function App() {
 
@@ -10,10 +10,11 @@ function App() {
   return (
     <>
       <Router>
-        <Header/>
-        <Routes>
-          <Route path='/' element={<Converter/>}/>
-          <Route path='/valute' element={<Valute/>}/>
+        <Routes> 
+          <Route path='/Converter/' element={<Page/>}>
+            <Route path='converter/' element={<Converter/>}/>
+            <Route path='valute/' element={<Valute/>}/>
+          </Route>
         </Routes>
       </Router>
     </>
