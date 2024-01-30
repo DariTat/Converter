@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchRates } from "../redux/slice/valuteSlice"
 
 
 export const Converter = () => {
-    const { rates } = useSelector((state) => state.valute)
+    const [rates, setRates] = useState([])
     const [text, setText] = useState('')
     const [value, setValue] = useState(null)
     const [valuteFrom, setValuteFrom] = useState('')
     const [valuteTo, setValuteTo] = useState('')
     const [result, setResult] = useState('')
     const [disabled, setDisabled] = useState(true)
-    const dispatch = useDispatch()
+
+    const fetchRates = () => {
+        try {
+            fetch('https://www.cbr-xml-daily.ru/latest.js')
+                .then(res => res.json())
+                .then(data => setRates(data.rates))
+        } catch (e) {
+            console.warn(e.message)
+        }
+    }
 
     useEffect(() => {
-        dispatch(fetchRates())
+        fetchRates()
     }, [])
 
     useEffect(() => {

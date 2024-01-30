@@ -12,8 +12,8 @@ function App() {
       <Router>
         <Routes> 
           <Route path='/Converter/' element={<Page/>}>
-            <Route path='converter/' element={<Converter/>}/>
-            <Route path='valute/' element={<Valute/>}/>
+            <Route index element={<Converter/>}/>
+            <Route path='valute' element={<Valute/>}/>
           </Route>
         </Routes>
       </Router>

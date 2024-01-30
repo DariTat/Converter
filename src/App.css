@@ -18,5 +18,19 @@ body {
 
 .table {
   text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.navbar {
+  font-size: 1.5rem;
+}
+
+.dropdown-menu {
+  min-width: 70px;
+}
+
+.hidden {
+  display: none;
+}
